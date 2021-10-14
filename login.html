@@ -14,14 +14,15 @@
             <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label>
             <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Registrarme</label>
             <div class="login-form">
+                <form method="post" action="validar.php">
                 <div class="sign-in-htm">
                     <div class="group">
                         <label for="user" class="label">Usuario</label>
-                        <input id="user" type="text" class="input">
+                        <input name="user" type="text" class="input" required>
                     </div>
                     <div class="group">
                         <label for="pass" class="label">Contraseña</label>
-                        <input id="pass" type="password" class="input" data-type="password">
+                        <input name="pass" type="password" class="input" data-type="password" required>
                     </div>
                     <div class="group">
                         <input id="check" type="checkbox" class="check" checked>
@@ -35,34 +36,37 @@
                         <a href="#forgot">Olvido contraseña?</a>
                     </div>
                 </div>
+                </form>
                 <div class="sign-up-htm">
+                    <form method="post" action="registro.php">
                     <div class="group">
                         <label for="user" class="label">Usuario</label>
-                        <input id="user" type="text" class="input">
+                        <input name="user" type="text" class="input" required>
                     </div>
                     <div class="group">
                         <label for="pass" class="label">Contraseña</label>
-                        <input id="pass" type="password" class="input" data-type="password">
+                        <input name="pass" type="password" class="input" data-type="password" required>
                     </div>
                     <div class="group">
                         <label for="pass" class="label">Repetir Contraseña</label>
-                        <input id="pass" type="password" class="input" data-type="password">
+                        <input name="passc" type="password" class="input" data-type="password" required>
                     </div>
                     <div class="group">
                         <label for="email" class="label">Email</label>
-                        <input id="email" type="text" class="input">
+                        <input name="email" type="text" class="input" required>
                     </div>
-                    <div class="group">
+                    <!--<div class="group">
                         <label for="rol" class="label">Rol</label>
                         <select name="rol" id="rol" type="text" class="input">
                             <option value="1">Proveedor</option>
                             <option value="2">Produccion</option>
                         </select>
-                    </div>
+                    </div>-->
                     <div class="group">
                         <input type="submit" class="button" value="Registrarme">
                     </div>
                 </div>
+                </form>
             </div>
         </div>
     </div>

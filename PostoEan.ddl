@@ -10,20 +10,20 @@
 -- predefined type, no DDL - XMLTYPE
 
 CREATE TABLE acceso (
-    administrador_id      VARCHAR2(4000) NOT NULL,
-    administrador_clave   VARCHAR2(4000) NOT NULL,
-    administrador_usuario VARCHAR2(4000) NOT NULL
+    administrador_id      VARCHAR(4000) NOT NULL,
+    administrador_clave   VARCHAR(4000) NOT NULL,
+    administrador_usuario VARCHAR(4000) NOT NULL
 );
 
 CREATE TABLE administrador (
-    usuario           VARCHAR2(4000) NOT NULL,
-    clave             VARCHAR2(4000) NOT NULL,
-    id                VARCHAR2(4000) NOT NULL,
-    rol               VARCHAR2(4000) NOT NULL,
-    tipo_de_documento VARCHAR2(4000) NOT NULL,
-    nombre            VARCHAR2(4000) NOT NULL,
-    email             VARCHAR2(4000) NOT NULL,
-    numero_contacto   VARCHAR2(4000) NOT NULL
+    usuario           VARCHAR(4000) NOT NULL,
+    clave             VARCHAR(4000) NOT NULL,
+    id                VARCHAR(4000) NOT NULL,
+    rol               VARCHAR(4000) NOT NULL,
+    tipo_de_documento VARCHAR(4000) NOT NULL,
+    nombre            VARCHAR(4000) NOT NULL,
+    email             VARCHAR(4000) NOT NULL,
+    numero_contacto   VARCHAR(4000) NOT NULL
 );
 
 ALTER TABLE administrador
@@ -38,26 +38,26 @@ ALTER TABLE administrador
                                                   usuario );
 
 CREATE TABLE documentos (
-    proveedor_codigo_proveedor VARCHAR2(4000) NOT NULL,
-    proveedor_usuario          VARCHAR2(4000) NOT NULL,
-    proveedor_clave            VARCHAR2(4000) NOT NULL,
+    proveedor_codigo_proveedor VARCHAR(4000) NOT NULL,
+    proveedor_usuario          VARCHAR(4000) NOT NULL,
+    proveedor_clave            VARCHAR(4000) NOT NULL,
     documentos                 BLOB NOT NULL
 );
 
 CREATE TABLE plan_de_operacion (
     plan_de_operacion_id        NUMBER NOT NULL,
-    id_propuesta                VARCHAR2(4000) NOT NULL,
-    operacion                   VARCHAR2(4000) NOT NULL,
-    propuesta                   VARCHAR2(4000) NOT NULL,
-    proveedor_codigo_proveedor  VARCHAR2(4000) NOT NULL,
-    proveedor_usuario           VARCHAR2(4000) NOT NULL,
-    proveedor_clave             VARCHAR2(4000) NOT NULL,
-    proveedor_codigo_proveedor2 VARCHAR2(4000) NOT NULL,
-    proveedor_usuario2          VARCHAR2(4000) NOT NULL,
-    proveedor_clave2            VARCHAR2(4000) NOT NULL,
-    administrador_id            VARCHAR2(4000) NOT NULL,
-    administrador_clave         VARCHAR2(4000) NOT NULL,
-    administrador_usuario       VARCHAR2(4000) NOT NULL
+    id_propuesta                VARCHAR(4000) NOT NULL,
+    operacion                   VARCHAR(4000) NOT NULL,
+    propuesta                   VARCHAR(4000) NOT NULL,
+    proveedor_codigo_proveedor  VARCHAR(4000) NOT NULL,
+    proveedor_usuario           VARCHAR(4000) NOT NULL,
+    proveedor_clave             VARCHAR(4000) NOT NULL,
+    proveedor_codigo_proveedor2 VARCHAR(4000) NOT NULL,
+    proveedor_usuario2          VARCHAR(4000) NOT NULL,
+    proveedor_clave2            VARCHAR(4000) NOT NULL,
+    administrador_id            VARCHAR(4000) NOT NULL,
+    administrador_clave         VARCHAR(4000) NOT NULL,
+    administrador_usuario       VARCHAR(4000) NOT NULL
 );
 
 CREATE UNIQUE INDEX plan_de_operacion__idx ON
@@ -81,22 +81,22 @@ CREATE UNIQUE INDEX plan_de_operacion__idxv1 ON
 ALTER TABLE plan_de_operacion ADD CONSTRAINT plan_de_operacion_pk UNIQUE ( plan_de_operacion_id );
 
 CREATE TABLE precios (
-    proveedor_codigo_proveedor VARCHAR2(4000) NOT NULL,
-    proveedor_clave            VARCHAR2(4000) NOT NULL,
-    proveedor_usuario          VARCHAR2(4000) NOT NULL,
-    material                   VARCHAR2(4000) NOT NULL,
+    proveedor_codigo_proveedor VARCHAR(4000) NOT NULL,
+    proveedor_clave            VARCHAR(4000) NOT NULL,
+    proveedor_usuario          VARCHAR(4000) NOT NULL,
+    material                   VARCHAR(4000) NOT NULL,
     precios                    NUMBER NOT NULL,
     fecha                      DATE NOT NULL
 );
 
 CREATE TABLE produccion (
-    administrador_id      VARCHAR2(4000) NOT NULL,
-    administrador_clave   VARCHAR2(4000) NOT NULL,
-    administrador_usuario VARCHAR2(4000) NOT NULL,
-    tipo_documento        VARCHAR2(4000) NOT NULL,
-    nombre                VARCHAR2(4000) NOT NULL,
-    apellidos             VARCHAR2(4000) NOT NULL,
-    correo_electronico    VARCHAR2(4000) NOT NULL,
+    administrador_id      VARCHAR(4000) NOT NULL,
+    administrador_clave   VARCHAR(4000) NOT NULL,
+    administrador_usuario VARCHAR(4000) NOT NULL,
+    tipo_documento        VARCHAR(4000) NOT NULL,
+    nombre                VARCHAR(4000) NOT NULL,
+    apellidos             VARCHAR(4000) NOT NULL,
+    correo_electronico    VARCHAR(4000) NOT NULL,
     numero_contacto       INTEGER NOT NULL
 );
 
@@ -105,22 +105,22 @@ ALTER TABLE produccion
 
 CREATE TABLE propuesta (
     fecha_registro             DATE NOT NULL,
-    propuesta                  VARCHAR2(4000),
-    proveedor_codigo_proveedor VARCHAR2(4000) NOT NULL,
-    proveedor_usuario          VARCHAR2(4000) NOT NULL,
-    proveedor_clave            VARCHAR2(4000) NOT NULL
+    propuesta                  VARCHAR(4000),
+    proveedor_codigo_proveedor VARCHAR(4000) NOT NULL,
+    proveedor_usuario          VARCHAR(4000) NOT NULL,
+    proveedor_clave            VARCHAR(4000) NOT NULL
 );
 
 CREATE TABLE proveedor (
-    codigo_proveedor                       VARCHAR2(4000) NOT NULL,
-    usuario                                VARCHAR2(4000) NOT NULL,
-    clave                                  VARCHAR2(4000) NOT NULL,
-    rol                                    VARCHAR2(4000) NOT NULL,
-    direccion                              VARCHAR2(4000) NOT NULL,
-    region                                 VARCHAR2(4000) NOT NULL,
-    correoelectronico                      VARCHAR2(4000) NOT NULL,
+    codigo_proveedor                       VARCHAR(4000) NOT NULL,
+    usuario                                VARCHAR(4000) NOT NULL,
+    clave                                  VARCHAR(4000) NOT NULL,
+    rol                                    VARCHAR(4000) NOT NULL,
+    direccion                              VARCHAR(4000) NOT NULL,
+    region                                 VARCHAR(4000) NOT NULL,
+    correoelectronico                      VARCHAR(4000) NOT NULL,
     numero_contacto                        INTEGER NOT NULL,
-    materiales                             VARCHAR2(4000) NOT NULL,
+    materiales                             VARCHAR(4000) NOT NULL,
     precio                                 NUMBER NOT NULL,
     iva                                    NUMBER NOT NULL,
     porcentaje_iva                         NUMBER,
