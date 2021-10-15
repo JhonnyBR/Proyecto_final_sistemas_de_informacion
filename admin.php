@@ -15,6 +15,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="https://www.districhapinero.com/assets/media/logo-post.png" type="image/x-icon">
+    <link rel="stylesheet" href="./CSS/h2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
     <title>Index Admin</title>
 </head>
 <body>
@@ -30,12 +34,6 @@
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="admin.html">Administrador<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="proveedor.html">Proveedor</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="produccion.html">Produccion</a>
                 </li>
             </ul>
         </div>
@@ -59,14 +57,12 @@
                     <th scope="col">Precio</th>
                     <th scope="col">Iva</th>
                     <th scope="col">Materiales</th>
-                    <th scope="col">Editar</th>
-
                 </tr>
             </thead>
             <?php
                 $consulta=$mysqli->query("SELECT* FROM proveeddor");
                 if($consulta->num_rows>=1){
-                    
+                    // <h2 class="title-if">Actualmente no tiene contratado ningún proveedor 😔 </h2>
                 }
             ?>
             <tbody>
@@ -78,7 +74,6 @@
                     <td>$200.000 kg</td>
                     <td>2%</td>
                     <td>PET</td>
-                    <td><a class="btn btn-success" href="validarrol.html" role="button">Validar rol</a></td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
@@ -88,7 +83,6 @@
                     <td>$200.000 kg</td>
                     <td>2%</td>
                     <td>PET</td>
-                    <td><a class="btn btn-success" href="validarrol.html" role="button">Validar rol</a></td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
@@ -98,7 +92,6 @@
                     <td>$200.000 kg</td>
                     <td>2%</td>
                     <td>PET</td>
-                    <td><a class="btn btn-success" href="validarrol.html" role="button">Validar rol</a></td>
                 </tr>
                 <tr>
                     <th scope="row">4</th>
@@ -108,7 +101,6 @@
                     <td>$200.000 kg</td>
                     <td>2%</td>
                     <td>PET</td>
-                    <td><a class="btn btn-success" href="validarrol.html" role="button">Validar rol</a></td>
                 </tr>
             </tbody>
         </table>
