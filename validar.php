@@ -9,12 +9,12 @@ if($user=="" or null){
 	$consulta=$mysqli->query("SELECT * FROM Administrador WHERE USUARIO= '$user'");
 	if($consulta->num_rows>=1){
 		while($fila = $consulta->fetch_assoc()){
-			if($pass==$fila["Clave"]){
+			if($pass==$fila["clave"]){
 				session_start();
 				$_SESSION['logged_in_user_id']=$fila["Id"];
-				$_SESSION['Rol']=$fila["Rol"];
-				$_SESSION['Email']=$fila["Email"];
-				$_SESSION["Telefono"]=$fila["Numero_Contacto"];
+				$_SESSION['Rol']=$fila["rol"];
+				$_SESSION['Email']=$fila["email"];
+				$_SESSION["Telefono"]=$fila["numero_Contacto"];
 				if($_SESSION['Rol']=="Administrador"){
 					header("Location:http://localhost/postobon/admin.php");
 				}elseif ($_SESSION['Rol']=="proveedor") {

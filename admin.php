@@ -55,7 +55,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Proveedor</th>
                     <th scope="col">Correo</th>
-                    <th scope="col">Numero</th>
+                    <th scope="col">Número</th>
                     <th scope="col">Precio</th>
                     <th scope="col">Iva</th>
                     <th scope="col">Materiales</th>
@@ -63,6 +63,12 @@
 
                 </tr>
             </thead>
+            <?php
+                $consulta=$mysqli->query("SELECT* FROM proveeddor");
+                if($consulta->num_rows>=1){
+                    
+                }
+            ?>
             <tbody>
                 <tr>
                     <th scope="row">1</th>
