@@ -2,7 +2,10 @@
 	session_start();
 	if(isset($_SESSION['Email'])==null){
 		header("Location:http://localhost/postobon/login.html");
-	}
+	}elseif($_SESSION['Rol']!="Administrador"){
+        header("refresh:0.1;url=http://localhost/postobon/salir.php");
+        echo '<script language="javascript"> alert("Lo sentimos pero estas accediendo a zonas restringodas 😮😤")</script>';
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,24 +26,31 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="https://www.postobon.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Postob%C3%B3n_S._A._logo.svg/1280px-Postob%C3%B3n_S._A._logo.svg.png" alt="logo" width="90px"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Inicio </a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="admin.html">Administrador<span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-        </div>
+            <a class="navbar-brand" href="https://www.postobon.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Postob%C3%B3n_S._A._logo.svg/1280px-Postob%C3%B3n_S._A._logo.svg.png" alt="logo" width="90px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="admin.php">Administrador<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Proveedor</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#">Produccion</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </nav>
     <br><br>
     <center>
-        <a class="btn btn-primary" href="crearrol.html" role="button">Crear rol</a>
+        <a class="btn btn-primary" href="crearrol.php" role="button">Crear usuario</a>
         <a class="btn btn-danger" href="salir.php" role="button">Cerrar sesion</a>
     </center>   
     <br><br><br>
@@ -60,49 +70,26 @@
                 </tr>
             </thead>
             <?php
-                $consulta=$mysqli->query("SELECT* FROM proveeddor");
+                 include("connection.php");
+                 $consulta= $mysqli->query("SELECT * FROM proveedor");
                 if($consulta->num_rows>=1){
-                    // <h2 class="title-if">Actualmente no tiene contratado ningún proveedor 😔 </h2>
+                    while($fila = $consulta->fetch_assoc()){
+                        echo "<tbody>
+                            <tr>
+                                <th scope='row'>".$fila["id_proveedor"]."</th>
+                                <td>".$fila["usuario"]."</td>
+                                <td>".$fila["correo_electronico"]."</td>
+                                <td>".$fila["numero_contacto"]."</td>
+                                <td>".$fila["precio"]."</td>
+                                <td>".$fila["iva"]."</td>
+                                <td>".$fila["materiales"]."</td>
+                            </tr>
+                        </tbody>";
+                    }
+                }else{
+                    echo "<h2 class='title-if'>Actualmente no tiene contratado ningún proveedor 😔 </h2>";
                 }
             ?>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Distriplas</td>
-                    <td>user@example.com</td>
-                    <td>12345</td>
-                    <td>$200.000 kg</td>
-                    <td>2%</td>
-                    <td>PET</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Medplast</td>
-                    <td>user@example.com</td>
-                    <td>12345</td>
-                    <td>$200.000 kg</td>
-                    <td>2%</td>
-                    <td>PET</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Colplast</td>
-                    <td>user@example.com</td>
-                    <td>12345</td>
-                    <td>$200.000 kg</td>
-                    <td>2%</td>
-                    <td>PET</td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Plasticos la montaña</td>
-                    <td>user@example.com</td>
-                    <td>12345</td>
-                    <td>$200.000 kg</td>
-                    <td>2%</td>
-                    <td>PET</td>
-                </tr>
-            </tbody>
         </table>
     </div>
 </body>

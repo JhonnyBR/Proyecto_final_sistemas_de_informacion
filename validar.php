@@ -14,7 +14,7 @@ if($user=="" or null){
 				$_SESSION['logged_in_user_id']=$fila["Id"];
 				$_SESSION['Rol']=$fila["rol"];
 				$_SESSION['Email']=$fila["email"];
-				$_SESSION["Telefono"]=$fila["numero_Contacto"];
+				$_SESSION["Telefono"]=$fila["numero_contacto"];
 				if($_SESSION['Rol']=="Administrador"){
 					header("Location:http://localhost/postobon/admin.php");
 				}elseif ($_SESSION['Rol']=="proveedor") {
