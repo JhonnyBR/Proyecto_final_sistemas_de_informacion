@@ -15,17 +15,39 @@ if($user=="" or null){
 				$_SESSION['Rol']=$fila["rol"];
 				$_SESSION['Email']=$fila["email"];
 				$_SESSION["Telefono"]=$fila["numero_contacto"];
+				$_SESSION['DOC']=$fila['Documento'];
 				if($_SESSION['Rol']=="Administrador"){
 					header("Location:http://localhost/postobon/admin.php");
 				}elseif ($_SESSION['Rol']=="proveedor") {
-					// code...
+					$_SESSION['Name']=$fila["nombre"];
+					$_SESSION['DOC']=$fila['Documento'];
+					$_SESSION['USER']=$user;
+					$_SESSION['pass']=$pass;
+					/*$doc=$_SESSION['DOC'];
+					$consulta_aux=$mysqli->query("SELECT * FROM proveedor where codigo_proveedor='$doc'");
+					while($resultado=$consulta_aux->fetch_assoc()){
+						$_SESSION['Precio']=$resultado['precio'];
+						$_SESSION['Iva']=$resultado['iva'];
+						$_SESSION['Materiales']=$resultado['materiales'];
+						$_SESSION['Precio']=$resultado['precio'];
+					}*/
+					header("Location:http://localhost/postobon/precios.php");
 				}elseif ($_SESSION['Rol']=="produccion") {
-					// code...
+					$_SESSION['logged_in_user_id']=$fila["Id"];
+					$_SESSION['Rol']=$fila["rol"];
+					$_SESSION['Email']=$fila["email"];
+					$_SESSION["Telefono"]=$fila["numero_contacto"];
+					$_SESSION['DOC']=$fila['Documento'];
+					$_SESSION['Name']=$fila["nombre"];
+					$_SESSION['DOC']=$fila['Documento'];
+					$_SESSION['USER']=$user;
+					$_SESSION['pass']=$pass;
+					header("Location:http://localhost/postobon/produccion.php");
 				}
 				
 			}else{
 				header("refresh:0.1;url=http://localhost/postobon/login.html");
-		echo '<script language="javascript"> alert("Por favor valide los datos ingresados 🤔.")</script>';
+				echo '<script language="javascript"> alert("Por favor valide los datos ingresados 🤔.")</script>';
 			}
 		}
 	}else{

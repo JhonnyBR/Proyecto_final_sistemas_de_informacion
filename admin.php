@@ -67,6 +67,7 @@
                     <th scope="col">Precio</th>
                     <th scope="col">Iva</th>
                     <th scope="col">Materiales</th>
+                    <th scope="col">Documentos</th>
                 </tr>
             </thead>
             <?php
@@ -74,7 +75,8 @@
                  $consulta= $mysqli->query("SELECT * FROM proveedor");
                 if($consulta->num_rows>=1){
                     while($fila = $consulta->fetch_assoc()){
-                        echo "<tbody>
+                        if($fila['Nombre_doc']==""){
+                           echo "<tbody>
                             <tr>
                                 <th scope='row'>".$fila["id_proveedor"]."</th>
                                 <td>".$fila["usuario"]."</td>
@@ -84,7 +86,22 @@
                                 <td>".$fila["iva"]."</td>
                                 <td>".$fila["materiales"]."</td>
                             </tr>
+                        </tbody>"; 
+                        }else{
+                              echo "<tbody>
+                            <tr>
+                                <th scope='row'>".$fila["id_proveedor"]."</th>
+                                <td>".$fila["usuario"]."</td>
+                                <td>".$fila["correo_electronico"]."</td>
+                                <td>".$fila["numero_contacto"]."</td>
+                                <td>".$fila["precio"]."</td>
+                                <td>".$fila["iva"]."</td>
+                                <td>".$fila["materiales"]."</td>
+                                <td> <a href='download.php?id=".$fila["codigo_proveedor"]."'>Descargar</a> </td>
+                            </tr>
                         </tbody>";
+                        }
+                        
                     }
                 }else{
                     echo "<h2 class='title-if'>Actualmente no tiene contratado ningún proveedor 😔 </h2>";
