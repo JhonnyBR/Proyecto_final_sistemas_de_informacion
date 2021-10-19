@@ -21,5 +21,6 @@ Para le generación de este sistema se usó:
 ### Librerias usadas en PHP
 
 A. [Session](#Session) : Usada para generar las distintas variable de inicio de Session y de esta manera garantizar que no sucedan infiltraciones
+
 B. [Mysqli](#Mysqli) : Usada para generar la conexión entre PHP y Mysqli al igual que poder generar las distintas consultas como INSERT y SELECT para los distintos modulos o vistas
 
