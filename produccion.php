@@ -31,16 +31,15 @@ if(isset($_SESSION['Email'])==null){
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">Inicio </a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item ">
                     <a class="nav-link active" href="produccion.html">Produccion</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="salir.php">Cerrar Sesion</a>
                 </li>
             </ul>
         </div>
     </nav>
-    <br><br>
-    <center>
-        <a class="btn btn-danger" href="salir.php" role="button">Cerrar sesion</a>
-    </center>   
     <br><br><br>
     <h1>
         <center> Tabla de inventario </center>

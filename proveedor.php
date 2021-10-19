@@ -34,17 +34,20 @@ if(isset($_SESSION['Email'])==null){
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Proveedor</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="proveedor-actualizar.php">Actualizar datos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="propuesta.php">Plan de operacion y propuesta</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="salir.php">Cerrar sesion</a>
+                </li>
             </ul>
         </div>
     </nav>
     <br><br>
     <br><br>
-    <center>
-        <a class="btn btn-primary" href="proveedor-actualizar.php" role="button">Actualizar datos</a>
-        <a class="btn btn-success" href="propuesta.php" role="button">Plan de operacion y propuesta</a>
-        <a class="btn btn-danger" href="#cierre" role="button">Cerrar sesion</a>
-    </center>   
-    <br>
     <center>
         <h1>Bienvenido Proveedor</h1>
         <h6>Por favor actualice sus datos si no lo ha hecho</h6>

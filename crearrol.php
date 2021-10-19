@@ -38,21 +38,16 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="admin.php">Administrador<span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Proveedor</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="admin.php">Menu principal</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="#">Produccion</a>
+                        <a class="nav-link" href="salir.php">Cerrar Sesion</a>
                     </li>
                 </ul>
             </div>
         </nav>
         <br><br>
-        <center>
-        <a class="btn btn-primary" href="admin.php" role="button">Menú principal <i class="fas fa-home"></i></a>
-        <a class="btn btn-danger" href="#cierre" role="button">Cerrar sesión <i class="far fa-times-circle"></i></a>
-        </center>
-        <br>
         <h2 id="titulo">CREAR ROLES <i class="fas fa-user-alt"></i></h2>
 
         <center>

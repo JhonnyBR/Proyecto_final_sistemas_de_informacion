@@ -39,20 +39,21 @@
                         <a class="nav-link" href="admin.php">Administrador<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="crearrol.php">Crear usuario</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Proveedor</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Produccion</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="salir.php">Cerrar sesión</a>
                     </li>
                 </ul>
             </div>
         </nav>
-    </nav>
-    <br><br>
-    <center>
-        <a class="btn btn-primary" href="crearrol.php" role="button">Crear usuario</a>
-        <a class="btn btn-danger" href="salir.php" role="button">Cerrar sesion</a>
-    </center>   
+    </nav> 
     <br><br><br>
     <h1><center>Tabla de precios Proveedores</center></h1>   
     <br><br><br> 
@@ -71,12 +72,12 @@
                 </tr>
             </thead>
             <?php
-                 include("connection.php");
-                 $consulta= $mysqli->query("SELECT * FROM proveedor");
+                include("connection.php");
+                $consulta= $mysqli->query("SELECT * FROM proveedor");
                 if($consulta->num_rows>=1){
                     while($fila = $consulta->fetch_assoc()){
                         if($fila['Nombre_doc']==""){
-                           echo "<tbody>
+                            echo "<tbody>
                             <tr>
                                 <th scope='row'>".$fila["id_proveedor"]."</th>
                                 <td>".$fila["usuario"]."</td>
@@ -88,7 +89,7 @@
                             </tr>
                         </tbody>"; 
                         }else{
-                              echo "<tbody>
+                                echo "<tbody>
                             <tr>
                                 <th scope='row'>".$fila["id_proveedor"]."</th>
                                 <td>".$fila["usuario"]."</td>

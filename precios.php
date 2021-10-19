@@ -32,21 +32,22 @@ session_start();
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
+                <li class="nav-item">
                         <a class="nav-link" href="index.html">Inicio </a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Proveedor</a>
                     </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="proveedor.php">Menú</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="salir.php">Cerrar Sesion</a>
+                    </li>
                 </ul>
             </div>
         </nav>
         <br><br>
-        <center>
-        <a class="btn btn-primary" href="proveedor.html" role="button">Menú principal <i class="fas fa-home"></i></a>
-        <a class="btn btn-danger" href="salir.php" role="button">Cerrar sesión <i class="far fa-times-circle"></i></a>
-        </center>
-        <br>
         <h2 id="titulo">Añadir precios</h2>
 
         <center>

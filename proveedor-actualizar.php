@@ -38,14 +38,16 @@ if(isset($_SESSION['Email'])==null){
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Proveedor</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="proveedor.php">Menú principal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="salir.php">Cerrar sesión</a>
+                    </li>
                 </ul>
             </div>
         </nav>
         <br><br>
-        <center>
-        <a class="btn btn-primary" href="proveedor.html" role="button">Menú principal <i class="fas fa-home"></i></a>
-        <a class="btn btn-danger" href="#cierre" role="button">Cerrar sesión <i class="far fa-times-circle"></i></a>
-        </center>
         <br>
         <h2 id="titulo">Actualizar Datos <i class="fas fa-user-alt"></i></h2>
 
