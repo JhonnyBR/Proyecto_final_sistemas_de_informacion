@@ -3,7 +3,7 @@
 
 PostoEAN surge como solución a una necesidad en donde la empresa POSTOBON
 requeria un sistema que le ayudara a administrar las necesidades en cuanto a la 
-aquisición de materiales reciclados para sus propios procesos y de esta maanera generar planes de contingencia cuaando sean necesarios.
+aquisición de materiales reciclados para sus propios procesos y de esta manera generar planes de contingencia cuando sean necesarios.
 
 # Contenido
 1. [Lenguajes Usados](#Lenguajes-Usados)
