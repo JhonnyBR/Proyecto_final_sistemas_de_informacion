@@ -1,9 +1,9 @@
 <?php
 	session_start();
 	if(isset($_SESSION['Email'])==null){
-		header("Location:http://localhost/postobon/login.html");
+		header("Location:http://postoean.epizy.com/");
 	}elseif($_SESSION['Rol']!="Administrador"){
-        header("refresh:0.1;url=http://localhost/postobon/salir.php");
+        header("refresh:0.1;url=http://postoean.epizy.com/salir.php");
         echo '<script language="javascript"> alert("Lo sentimos pero estas accediendo a zonas restringodas 😮😤")</script>';
     }
    $documento=$_POST['id'];
@@ -26,12 +26,12 @@
    	$insert_pro="INSERT INTO `proveedor`(`codigo_proveedor`, `usuario`, `clave`, `rol`, `direccion`, `region`, `correo_electronico`, `numero_contacto`, `NIT`, `materiales`, `precio`, `iva`, `porcentaje_iva`) VALUES ('$documento','$usuario','$password','$rol','$dir','$reg','$email','$numero','$documento','$mat','$precio','$v_iva','$p_iva')";
    		$mysqli->query($insert_ad);
    		$mysqli->query($insert_pro);
-   		header("refresh:0.1;url=http://localhost/postobon/crearrol.php");
+   		header("refresh:0.1;url=http://postoean.epizy.com/crearrol.php");
 		echo '<script language="javascript"> alert("Genial! Ahora tienes un nuevo proveedor 😊")</script>';
    }else{
    		$insert_ad="INSERT INTO `administrador`(`usuario`, `clave`, `rol`, `tipo_de_documento`, `Documento`, `nombre`, `email`, `numero_contacto`) VALUES ('$usuario','$password','$rol','$tipodoc','$documento','$nombre','$email','$numero')";
    		$mysqli->query($insert_ad);
-   		header("refresh:0.1;url=http://localhost/postobon/crearrol.php");
+   		header("refresh:0.1;url=http://postoean.epizy.com/crearrol.php");
 		echo '<script language="javascript"> alert("Genial ahora cuentas con un nuevo $rol")</script>';
    }
 ?>

@@ -1,9 +1,9 @@
 <?php
 	session_start();
 	if(isset($_SESSION['Email'])==null){
-		header("Location:http://localhost/postobon/login.html");
+		header("Location:http://postoean.epizy.com/");
 	}elseif($_SESSION['Rol']!="Administrador"){
-        header("refresh:0.1;url=http://localhost/postobon/salir.php");
+        header("refresh:0.1;url=http://postoean.epizy.com/salir.php");
         echo '<script language="javascript"> alert("Lo sentimos pero estas accediendo a zonas restringodas 😮😤")</script>';
     }
 ?>

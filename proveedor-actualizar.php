@@ -1,9 +1,9 @@
 <?php
 session_start();
 if(isset($_SESSION['Email'])==null){
-    header("Location:http://localhost/postobon/login.html");
+    header("Location:http://postoean.epizy.com/");
 }elseif($_SESSION['Rol']!="proveedor"){
-    header("refresh:0.1;url=http://localhost/postobon/salir.php");
+    header("refresh:0.1;url=http://postoean.epizy.com/salir.php");
     echo '<script language="javascript"> alert("Lo sentimos pero estas accediendo a zonas restringodas 😮😤")</script>';
 }
 ?>
@@ -66,12 +66,12 @@ if(isset($_SESSION['Email'])==null){
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="tipo">Direccion</label>
-                                <input type="text" class="form-control" name="location" placeholder="location" required>
+                                <input type="text" class="form-control" name="location" placeholder="Direccion" required>
                             </div>
                             </div>
                             <div class="form-group">
                                 <label for="nombre">Región</label>
-                                <input type="text" class="form-control" name="region" placeholder="region" required>
+                                <input type="text" class="form-control" name="region" placeholder="Region" required>
                             </div>
                             <div class="form-group">
                                 <label for="celular">Celular</label>

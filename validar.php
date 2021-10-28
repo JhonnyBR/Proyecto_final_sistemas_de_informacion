@@ -2,11 +2,11 @@
 $user=$_POST["user"];
 $pass=$_POST['pass'];
 if($user=="" or null){
-	header("Location:http://localhost/postobon/login.html");
+	header("Location:http://postoean.epizy.com/");
 }else{
 	$pass=md5($pass);
 	include "connection.php";
-	$consulta=$mysqli->query("SELECT * FROM Administrador WHERE USUARIO= '$user'");
+	$consulta=$mysqli->query("SELECT * FROM administrador WHERE USUARIO= '$user'");
 	if($consulta->num_rows>=1){
 		while($fila = $consulta->fetch_assoc()){
 			if($pass==$fila["clave"]){
@@ -17,7 +17,7 @@ if($user=="" or null){
 				$_SESSION["Telefono"]=$fila["numero_contacto"];
 				$_SESSION['DOC']=$fila['Documento'];
 				if($_SESSION['Rol']=="Administrador"){
-					header("Location:http://localhost/postobon/admin.php");
+					header("Location:http://postoean.epizy.com/admin.php");
 				}elseif ($_SESSION['Rol']=="proveedor") {
 					$_SESSION['Name']=$fila["nombre"];
 					$_SESSION['DOC']=$fila['Documento'];
@@ -31,7 +31,7 @@ if($user=="" or null){
 						$_SESSION['Materiales']=$resultado['materiales'];
 						$_SESSION['Precio']=$resultado['precio'];
 					}*/
-					header("Location:http://localhost/postobon/precios.php");
+					header("Location:http://postoean.epizy.com/precios.php");
 				}elseif ($_SESSION['Rol']=="produccion") {
 					$_SESSION['logged_in_user_id']=$fila["Id"];
 					$_SESSION['Rol']=$fila["rol"];
@@ -42,16 +42,16 @@ if($user=="" or null){
 					$_SESSION['DOC']=$fila['Documento'];
 					$_SESSION['USER']=$user;
 					$_SESSION['pass']=$pass;
-					header("Location:http://localhost/postobon/produccion.php");
+					header("Location:http://postoean.epizy.com/produccion.php");
 				}
 				
 			}else{
-				header("refresh:0.1;url=http://localhost/postobon/login.html");
+				header("refresh:0.1;url=http://postoean.epizy.com/");
 				echo '<script language="javascript"> alert("Por favor valide los datos ingresados 🤔.")</script>';
 			}
 		}
 	}else{
-		header("refresh:0.1;url=http://localhost/postobon/login.html");
+		header("refresh:0.1;url=http://postoean.epizy.com/");
 		echo '<script language="javascript"> alert("Lo sentimos pero al parecer el usuario brindado no se encuentra registrado 😥.")</script>';
 	}
 }

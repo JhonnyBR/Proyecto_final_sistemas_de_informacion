@@ -39,9 +39,29 @@
                 </form>
                 <div class="sign-up-htm">
                     <form method="post" action="registro.php">
+                        <div class="group">
+                        <label for="nombre" class="label">Nombre</label>
+                        <input name="nombre" type="text" class="input" required>
+                    </div>
                     <div class="group">
                         <label for="user" class="label">Usuario</label>
                         <input name="user" type="text" class="input" required>
+                    </div>
+                    <div class="group">
+                        <label for="nit" class="label">NIT</label>
+                        <input name="nit" type="text" class="input" data-type="text" required>
+                    </div>
+                    <div class="group">
+                        <label for="email" class="label">Email</label>
+                        <input name="email" type="text" class="input" required>
+                    </div>
+                    <div class="group">
+                        <label for="Telefono" class="label">Telefono</label>
+                        <input name="Telefono" type="text" class="input" required>
+                    </div>
+                    <div class="group">
+                        <label for="direccion" class="label">Direccion</label>
+                        <input name="direccion" type="text" class="input" required>
                     </div>
                     <div class="group">
                         <label for="pass" class="label">Contraseña</label>
@@ -51,10 +71,7 @@
                         <label for="pass" class="label">Repetir Contraseña</label>
                         <input name="passc" type="password" class="input" data-type="password" required>
                     </div>
-                    <div class="group">
-                        <label for="email" class="label">Email</label>
-                        <input name="email" type="text" class="input" required>
-                    </div>
+                    
                     <!--<div class="group">
                         <label for="rol" class="label">Rol</label>
                         <select name="rol" id="rol" type="text" class="input">

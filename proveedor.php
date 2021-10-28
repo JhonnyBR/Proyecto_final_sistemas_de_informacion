@@ -1,9 +1,9 @@
 <?php
 session_start();
 if(isset($_SESSION['Email'])==null){
-    header("Location:http://localhost/postobon/login.html");
+    header("Location:http://postoean.epizy.com/");
 }elseif($_SESSION['Rol']!="proveedor"){
-    header("refresh:0.1;url=http://localhost/postobon/salir.php");
+    header("refresh:0.1;url=http://postoean.epizy.com/salir.php");
     echo '<script language="javascript"> alert("Lo sentimos pero estas accediendo a zonas restringodas 😮😤")</script>';
 }
 ?>
@@ -82,49 +82,39 @@ if(isset($_SESSION['Email'])==null){
     <br><br>
     <div class="card">
         <div class="card-header">
-            Cargue sus precios
+            Valide sus precios
         </div>
         <div class="card-body">
             <blockquote class="blockquote mb-0">
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Proveedor</th>
-                            <th scope="col">Correo</th>
-                            <th scope="col">Numero</th>
-                            <th scope="col">Precio</th>
-                            <th scope="col">Iva</th>
                             <th scope="col">Material</th>
                             <th scope="col">Producto</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Iva</th>
                             <th scope="col">Cantidad</th>
 
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Distriplas</td>
-                            <td>user@example.com</td>
-                            <td>12345</td>
-                            <td>$200.000 kg</td>
-                            <td>2%</td>
-                            <td>PET</td>
-                            <td>Botellas 300 ml</td>
-                            <td>3000</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Medplast</td>
-                            <td>user@example.com</td>
-                            <td>12345</td>
-                            <td>$200.000 kg</td>
-                            <td>2%</td>
-                            <td>PET</td>
-                            <td>Botellas 300 ml</td>
-                            <td>3000</td>
-                        </tr>
-                    </tbody>
+                    <?php
+                    $documento=$_SESSION['DOC'];
+                    include 'connection.php';
+                    $consulta=$mysqli->query("SELECT * FROM precios WHERE proveedor_codigo_proveedor='$documento'");
+                    while ($fila = $consulta->fetch_assoc()) {
+                        echo "
+                            <tbody>
+                            <tr>
+                            <td>".$fila['material']."</td>
+                            <td>".$fila['Producto']."</td>
+                            <td>".$fila['precios']."</td>
+                            <td>".$fila['iva']."</td>
+                            <td>".$fila['Cantidad']."</td>
+                            </tr>
+                            </tbody>
+                        ";
+                    }
+                    ?>
                 </table>
                 <center>
                     <a class="btn btn-success" href="precios.php" role="button">Agregar</a>
