@@ -18,6 +18,6 @@ $fecha=$dt->format("d/M/Y g:i a");
 include "connection.php";
 $consulta1=$mysqli->query("INSERT INTO `precios`(`proveedor_codigo_proveedor`, `proveedor_clave`, `proveedor_usuario`, `material`,`Producto`, `precios`,`iva`,`Cantidad`, `fecha`) VALUES ('".$_SESSION['DOC']."','".$_SESSION['pass']."','".$_SESSION['USER']."','$material','$producto','$precio','$iva','$cantidad','$fecha')");
 
-header("refresh:0.1;url=http://localhost/postobon/precios.php");
+header("refresh:0.1;url=http://postoean.epizy.com/precios.php");
         echo '<script language="javascript"> alert("Gracias. nos encargaremos de ver tus precios. 😁")</script>';
 ?>

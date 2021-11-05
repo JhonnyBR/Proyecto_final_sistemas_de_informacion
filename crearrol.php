@@ -61,7 +61,7 @@
                 <label for="tipo">TIPO DOCUMENTO</label>
                 <!--<input type="text" class="form-control" name="tipo" value="Tipo">-->
                 <select name="tipdoc"  type="text" class="input" required>
-                            <option value="CC">Cédula</option>
+                            <option value="cedula">Cédula</option>
                             <option value="NIT">NIT</option>
                             <option value="Tarjeta de extranjería">Tarjeta de extranjería</option>
                             <option value="Cédula de extranjería">Cédula de extranjería</option>
