@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Actualizar Proveedor</title>
+        <title>Actualizar Inventario</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="shortcut icon" href="https://www.districhapinero.com/assets/media/logo-post.png" type="image/x-icon">
         <script src="https://kit.fontawesome.com/163b70c708.js" crossorigin="anonymous"></script>
@@ -27,10 +27,10 @@
                         <a class="nav-link" href="index.html">Inicio </a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Produccion</a>
+                        <a class="nav-link" href="produccion.php">Produccion</a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="produccion.html">Menu</a>
+                        <a class="nav-link" href="produccion.php">Menu</a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link" href="salir.php">Cerrar Sesion</a>
@@ -55,25 +55,37 @@
                                 <input type="text" class="form-control" name="id" value= "ID" readonly="readonly"  >
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="tipo">Proveedor</label>
-                                <input type="text" class="form-control" name="proveedor" value="proveedor" readonly="readonly">
-                            </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="nombre">Producto</label>
+                                <label for="producto">Producto</label>
                                 <input type="text" class="form-control" name="producto" value="producto" readonly="readonly">
                             </div>
-                            <div class="form-group">
-                                <label for="nombre">Material</label>
-                                <input type="text" class="form-control" name="material" value="material" readonly="readonly">
                             </div>
                             <div class="form-group">
-                                <label for="celular">Cantidad</label>
-                                <input type="text" class="form-control" name="cantidad" value="Cantidad">
+                                <label for="proveedor">Proveedor</label>
+                                <input type="text" class="form-control" name="proveedor" value="proveedor" readonly="readonly">
                             </div>
                             <div class="form-group">
-                                <label for="celular">Precio</label>
-                                <input type="text" class="form-control" name="precio" value="$Precio" readonly="readonly">
+                                <label for="descripcion">Descripción</label>
+                                <input type="text" class="form-control" name="descripcion" value="descripcion" readonly="readonly">
+                            </div>
+                            <div class="form-group">
+                                <label for="precio_venta">Precio de venta</label>
+                                <input type="text" class="form-control" name="precio_venta" value="Precio" readonly="readonly">
+                            </div>
+                            <div class="form-group">
+                                <label for="iva">Iva</label>
+                                <input type="text" class="form-control" name="iva" value="Iva" readonly="readonly">
+                            </div>
+                            <div class="form-group">
+                                <label for="cantidad">Cantidad</label>
+                                <input type="number" class="form-control" name="cantidad" value="1234567">
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha_min">Fecha minima reabastecimiento</label>
+                                <input type="date" class="form-control" name="fecha_min" value="Fecha minima reabastecimiento">
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha_max">Fecha maxima reabastecimiento</label>
+                                <input type="date" class="form-control" name="fecha_max" value="Fecha maxima reabastecimiento">
                             </div>
                 
                             <button type="submit" class="btn btn-success">Actualizar</button>

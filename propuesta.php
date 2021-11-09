@@ -39,10 +39,10 @@ session_start();
                         <a class="nav-link" href="#">Proveedor</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="proveedor.html">Menú principal </a>
+                        <a class="nav-link" href="proveedor.php">Menú principal </a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="salir.php">Cerrar sesiónr</a>
+                        <a class="nav-link" href="salir.php">Cerrar sesión</a>
                     </li>
                 </ul>
             </div>
@@ -60,15 +60,21 @@ session_start();
                         <form class="text-center border border-light p-5" action="registrarpropuesta.php" method="post">
                             <p class="h4 mb-4">Propuesta</p>
                             
+                            <label for="">Fecha</label>
+                            <div class="form-group">
+                                <input type="datetime" name="fecha"  value="<?php echo date("Y-m-d\TH-i");?>">
+                            </div>
+
                             <label>Descripción propuesta</label>
                             <div class="form-group">
-                                <textarea class="form-control rounded-0" rows="3" placeholder="Describe la propuesta" name="propuesta" required></textarea>
+                                <textarea maxlength="4000" class="form-control rounded-0" rows="3" placeholder="Describe la propuesta" name="propuesta" required></textarea>
                             </div>
+
                             <br>
                             
                             <label>Plan operacion</label>
                             <div class="form-group">
-                                <textarea class="form-control rounded-0"  rows="3" placeholder="Describe el plan operacion" name="operacion" required></textarea>
+                                <textarea maxlength="4000" class="form-control rounded-0"  rows="3" placeholder="Describe el plan operacion" name="operacion" required></textarea>
                             </div>
                             <br>
                             <center>

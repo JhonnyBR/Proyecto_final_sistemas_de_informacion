@@ -58,9 +58,10 @@
                 <input type="text" class="form-control" name="id" placeholder= "Documento" pattern="[0-9-]{3-45}" required>
             </div>
             <div class="group">
-                <label for="tipo">TIPO DOCUMENTO</label>
+                <label for="tipo">Tipo Documento</label>
+                <br>
                 <!--<input type="text" class="form-control" name="tipo" value="Tipo">-->
-                <select name="tipdoc"  type="text" class="input" required>
+                <select name="tipdoc"  type="text" class="form-control" required>
                             <option value="cedula">Cédula</option>
                             <option value="NIT">NIT</option>
                             <option value="Tarjeta de extranjería">Tarjeta de extranjería</option>
@@ -113,16 +114,18 @@
                 <label for="password">Contraseña</label>
                 <input type="password" class="form-control" name="password" placeholder="password" required>
             </div>
-            <div class="form-group">
+            <div class="form-select">
                 <label for="rol">Rol</label>
+                <br>
                 <!--<input type="text" class="form-control" name="rol" placeholder="rol">-->
-                <select name="rol"  type="text" class="input">
+                <select name="rol"  type="text" class="form-control">
                             <option value="Administrador">Administrador</option>
                             <option value="proveedor">proveedor</option>
                             <option value="produccion">produccion</option>
                 </select>
+            
             </div>
-
+            <br>
             <button type="submit" class="btn btn-success">Crear</button>
 
             <br>
