@@ -1,9 +1,9 @@
 <?php
 session_start();
 if(isset($_SESSION['Email'])==null){
-    header("Location:http://postoean.epizy.com/");
+    header("Location:http://postoean.freecluster.eu/");
 }elseif($_SESSION['Rol']!="proveedor"){
-    header("refresh:0.1;url=http://postoean.epizy.com/salir.php");
+    header("refresh:0.1;url=http://postoean.freecluster.eu/salir.php");
     echo '<script language="javascript"> alert("Lo sentimos pero estas accediendo a zonas restringodas 😮😤")</script>';
 }
 $localizacion=$_POST["location"];
@@ -14,6 +14,6 @@ $consulta2= "UPDATE `proveedor` SET `direccion`='$localizacion',`region`='$regio
 include "connection.php";
 $mysqli->query($consulta1);
 $mysqli->query($consulta2);
-header("refresh:0.1;url=http://postoean.epizy.com/proveedor-actualizar.php");
+header("refresh:0.1;url=http://postoean.freecluster.eu/proveedor-actualizar.php");
     echo '<script language="javascript"> alert("Gracias por actualizar tus datos. 😊")</script>';
 ?>

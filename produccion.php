@@ -1,9 +1,9 @@
 <?php
 session_start();
 if(isset($_SESSION['Email'])==null){
-    header("Location:http://postoean.epizy.com/");
+    header("Location:http://postoean.freecluster.eu/");
 }elseif($_SESSION['Rol']!="produccion"){
-    header("refresh:0.1;url=http://postoean.epizy.com/salir.php");
+    header("refresh:0.1;url=http://postoean.freecluster.eu/salir.php");
     echo '<script language="javascript"> alert("Lo sentimos pero estas accediendo a zonas restringodas 😮😤")</script>';
 }
 ?>

@@ -1,9 +1,9 @@
 <?php
     session_start();
     if(isset($_SESSION['Email'])==null){
-        header("Location:http://postoean.epizy.com/");
+        header("Location:http://postoean.freecluster.eu/");
     }elseif($_SESSION['Rol']!="Administrador"){
-        header("refresh:0.1;url=http://postoean.epizy.com/salir.php");
+        header("refresh:0.1;url=http://postoean.freecluster.eu/salir.php");
         echo '<script language="javascript"> alert("Lo sentimos pero estas accediendo a zonas restringodas 😮😤")</script>';
     }
 ?>
@@ -54,8 +54,8 @@
         <form action="new_user.php" method="post">
             <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="id">ID</label>
-                <input type="text" class="form-control" name="id" placeholder= "ID" required>
+                <label for="id">Documento</label>
+                <input type="text" class="form-control" name="id" placeholder= "Documento" pattern="[0-9-]{3-45}" required>
             </div>
             <div class="group">
                 <label for="tipo">TIPO DOCUMENTO</label>
@@ -81,7 +81,7 @@
                 <label for="nombre">Región</label>
                 <input type="text" class="form-control" name="reg" placeholder="Región" required>
             </div>
-            <div class="form-group">
+            <!--<div class="form-group">
                 <label for="nombre">Materilaes</label>
                 <input type="text" class="form-control" name="mat" placeholder="Materilaes" required>
             </div>
@@ -96,7 +96,7 @@
             <div class="form-group">
                 <label for="nombre">Porcentaje del iva</label>
                 <input type="text" class="form-control" name="p_iva" placeholder="Porcentaje del iva" required>
-            </div>
+            </div>-->
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" class="form-control" name="email" placeholder="Email" required>

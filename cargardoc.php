@@ -1,9 +1,9 @@
 <?php
 session_start();
 if(isset($_SESSION['Email'])==null){
-    header("Location:http://postoean.epizy.com/");
+    header("Location:http://postoean.freecluster.eu/");
 }elseif($_SESSION['Rol']!="proveedor"){
-    header("refresh:0.1;url=http://postoean.epizy.com/salir.php");
+    header("refresh:0.1;url=http://postoean.freecluster.eu/salir.php");
     echo '<script language="javascript"> alert("Lo sentimos pero estas accediendo a zonas restringodas 😮😤")</script>';
 }
 $nombre=$_FILES['archivo']["name"];
@@ -15,11 +15,13 @@ $fp = fopen($ubicacion_temp, "rb");
 $contenido = fread($fp, $size);
 $contenido = addslashes($contenido);
 fclose($fp);
-$consulta = "UPDATE `proveedor` SET `Nombre_doc`='$nombre',`Titulo`='$nombre',`Contenido`='$contenido',`Tipo`='$tipo' WHERE `correo_electronico`='".$_SESSION['Email']."'";
+$consulta = "UPDATE `proveedor` SET `nombre_doc`='$nombre',`titulo`='$nombre',`contenido`='$contenido',`tipo`='$tipo' WHERE `id_proveedor`='".$_SESSION['ID']."'";
 if($resultado = $mysqli->query($consulta)){
-	echo "Listo";
+	header("refresh:0.1;url=http://postoean.freecluster.eu/proveedor.php");
+        echo '<script language="javascript"> alert("Gracias por cargar tu documento")</script>';
 }else{
-	printf("Fallido ", $mysqli->error); 
+	header("refresh:0.1;url=http://postoean.freecluster.eu/proveedor.php");
+        echo '<script language="javascript"> alert("Por favor intenta de nuevo.")</script>';
 }
 
 ?>

@@ -1,5 +1,5 @@
 <?php
 	session_start();
 	session_destroy();
-	header("Location:http://postoean.epizy.com/");
+	header("Location:http://postoean.freecluster.eu/");
 ?>

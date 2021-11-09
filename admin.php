@@ -1,9 +1,9 @@
 <?php
 	session_start();
 	if(isset($_SESSION['Email'])==null){
-		header("Location:http://postoean.epizy.com/");
+		header("Location:http://postoean.freecluster.eu/");
 	}elseif($_SESSION['Rol']!="Administrador"){
-        header("refresh:0.1;url=http://postoean.epizy.com/salir.php");
+        header("refresh:0.1;url=http://postoean.freecluster.eu/salir.php");
         echo '<script language="javascript"> alert("Lo sentimos pero estas accediendo a zonas restringodas 😮😤")</script>';
     }
 ?>
@@ -80,7 +80,7 @@
                             echo "<tbody>
                             <tr>
                                 <th scope='row'>".$fila["id_proveedor"]."</th>
-                                <td>".$fila["usuario"]."</td>
+                                <td>".$fila["nombre"]."</td>
                                 <td>".$fila["correo_electronico"]."</td>
                                 <td>".$fila["numero_contacto"]."</td>
                                 <td>".$fila["precio"]."</td>
@@ -92,13 +92,13 @@
                                 echo "<tbody>
                             <tr>
                                 <th scope='row'>".$fila["id_proveedor"]."</th>
-                                <td>".$fila["usuario"]."</td>
+                                <td>".$fila["nombre"]."</td>
                                 <td>".$fila["correo_electronico"]."</td>
                                 <td>".$fila["numero_contacto"]."</td>
                                 <td>".$fila["precio"]."</td>
                                 <td>".$fila["iva"]."</td>
                                 <td>".$fila["materiales"]."</td>
-                                <td> <a href='download.php?id=".$fila["codigo_proveedor"]."'>Descargar</a> </td>
+                                <td> <a href='download.php?id=".$fila["id_proveedor"]."'>Descargar</a> </td>
                             </tr>
                         </tbody>";
                         }

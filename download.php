@@ -12,11 +12,11 @@ if(isset($_GET['id'])){
 		ob_clean();
 		flush();
 		echo $contenido;
-		header("Location:http://postoean.epizy.com/");
+		header("Location:http://postoean.freecluster.eu/");
 }
 }
 else{
-		header("refresh:0.1;url=http://postoean.epizy.com/salir.php");
+		header("refresh:0.1;url=http://postoean.freecluster.eu/salir.php");
 		echo '<script language="javascript"> alert("No hemos encontrado el archivo cargado, pidele al proveedor que lo vuelva a subir. 😬😎")</script>';
 }
 
