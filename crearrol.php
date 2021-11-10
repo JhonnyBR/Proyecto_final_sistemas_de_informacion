@@ -55,7 +55,7 @@
             <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="id">Documento</label>
-                <input type="text" class="form-control" name="id" placeholder= "Documento" pattern="[0-9-]{3-45}" required>
+                <input type="number" class="form-control" name="id" placeholder= "Documento" pattern="[0-9-]{3-45}" required>
             </div>
             <div class="group">
                 <label for="tipo">Tipo Documento</label>
@@ -75,12 +75,46 @@
                 <input type="text" class="form-control" name="nombre" placeholder="Nombre" required>
             </div>
             <div class="form-group">
-                <label for="nombre">Dirección</label>
+                <label for="dir">Dirección</label>
                 <input type="text" class="form-control" name="dir" placeholder="Dirección" required>
             </div>
             <div class="form-group">
-                <label for="nombre">Región</label>
-                <input type="text" class="form-control" name="reg" placeholder="Región" required>
+                <label for="region">Región</label>
+                <select class="form-control" id="reg" name ="reg" require>
+                    <option value="">-</option>
+                    <option value="Arauca">Arauca</option>
+                    <option value="Armenia">Armenia</option>
+                    <option value="Barranquilla">Barranquilla</option>
+                    <option value="Bogotá">Bogotá</option>
+                    <option value="Bucaramanga">Bucaramanga</option>
+                    <option value="Cali">Cali</option>
+                    <option value="Cartagena">Cartagena</option>
+                    <option value="Cúcuta">Cúcuta</option>
+                    <option value="Florencia">Florencia</option>
+                    <option value="Ibagué">Ibagué</option>
+                    <option value="Leticia">Leticia</option>
+                    <option value="Manizales">Manizales</option>
+                    <option value="Medellín">Medellín</option>
+                    <option value="Mitú">Mitú</option>
+                    <option value="Mocoa">Mocoa</option>
+                    <option value="Montería">Montería</option>
+                    <option value="Neiva">Neiva</option>
+                    <option value="Pasto">Pasto</option>
+                    <option value="Pereira">Pereira</option>
+                    <option value="Popayán">Popayán</option>
+                    <option value="Puerto Carreño">Puerto Carreño</option>
+                    <option value="Puerto Inírida">Puerto Inírida</option>
+                    <option value="Quibdó">Quibdó</option>
+                    <option value="Riohacha">Riohacha</option>
+                    <option value="San Andrés">San Andrés</option>
+                    <option value="San José del Guaviare">San José del Guaviare</option>
+                    <option value="Santa Marta">Santa Marta</option>
+                    <option value="Sincelejo">Sincelejo</option>
+                    <option value="Tunja">Tunja</option>
+                    <option value="Valledupar">Valledupar</option>
+                    <option value="Villavicencio">Villavicencio</option>
+                    <option value="Yopal">Yopal</option>
+                </select>
             </div>
             <!--<div class="form-group">
                 <label for="nombre">Materilaes</label>
@@ -104,7 +138,7 @@
             </div>
             <div class="form-group">
                 <label for="celular">Celular</label>
-                <input type="text" class="form-control" name="celular" placeholder="Celular" required>
+                <input type="number" class="form-control" name="celular" placeholder="Celular" required>
             </div>
             <div class="form-group">
                 <label for="user">Usuario</label>
