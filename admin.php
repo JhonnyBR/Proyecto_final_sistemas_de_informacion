@@ -8,6 +8,7 @@ if(isset($_SESSION['Email'])==null){
 }
 $proveedores=array();
 $cantidades=array();
+include("connection.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,61 +64,7 @@ $cantidades=array();
     </nav>
 </nav> 
 <br><br><br>
-<h1><center>Tabla de precios Proveedores</center></h1>   
-<br><br><br> 
-<div class="container-sm">
-    <table class="table">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Proveedor</th>
-                <th scope="col">Correo</th>
-                <th scope="col">Número</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Iva</th>
-                <th scope="col">Materiales</th>
-                <th scope="col">Documentos</th>
-            </tr>
-        </thead>
-        <?php
-        include("connection.php");
-        $consulta= $mysqli->query("SELECT * FROM proveedor");
-        if($consulta->num_rows>=1){
-            while($fila = $consulta->fetch_assoc()){
-                if($fila['Nombre_doc']==""){
-                    echo "<tbody>
-                    <tr>
-                    <th scope='row'>".$fila["id_proveedor"]."</th>
-                    <td>".$fila["nombre"]."</td>
-                    <td>".$fila["correo_electronico"]."</td>
-                    <td>".$fila["numero_contacto"]."</td>
-                    <td>".$fila["precio"]."</td>
-                    <td>".$fila["iva"]."</td>
-                    <td>".$fila["materiales"]."</td>
-                    </tr>
-                    </tbody>"; 
-                }else{
-                    echo "<tbody>
-                    <tr>
-                    <th scope='row'>".$fila["id_proveedor"]."</th>
-                    <td>".$fila["nombre"]."</td>
-                    <td>".$fila["correo_electronico"]."</td>
-                    <td>".$fila["numero_contacto"]."</td>
-                    <td>".$fila["precio"]."</td>
-                    <td>".$fila["iva"]."</td>
-                    <td>".$fila["materiales"]."</td>
-                    <td> <a href='download.php?id=".$fila["id_proveedor"]."'>Descargar</a> </td>
-                    </tr>
-                    </tbody>";
-                }
-
-            }
-        }else{
-            echo "<h2 class='title-if'>Actualmente no tiene contratado ningún proveedor 😔 </h2>";
-        }
-        ?>
-    </table>
-</div>
+<h1><center>Gráficas</center></h1>   
 <div id="chartdiv"></div>
 <?php
 $consulta=$mysqli->query("SELECT SUM(cantidad) AS Cantidad, proveedor_id_proveedor AS Proveedor FROM `precio` WHERE fecha>='2021-01-01' GROUP BY proveedor_id_proveedor");
