@@ -51,7 +51,7 @@ include("connection.php");
                     <a class="nav-link" href="crearrol.php">Crear usuario</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Proveedor</a>
+                    <a class="nav-link" href="admin_propuestas.html"> Prospuestas Proveedor</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Produccion</a>

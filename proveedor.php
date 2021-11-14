@@ -81,9 +81,41 @@ if(isset($_SESSION['Email'])==null){
     </div>
     <br><br>
     <div class="card">
+        <center>
         <div class="card-header">
-            Valide sus precios
+            Valide sus propuestas
         </div>
+        </center>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Propuesta</th>
+                            <th scope="col">Fecha registro</th>
+                            <th scope="col">Estado</th>
+                            <th scope="col">Observación</th>
+                        </tr>
+                    </thead>
+                        <tbody>
+                            <tr>
+                            <td>propuesta</td>
+                            <td>dd/mm/aa</td>
+                            <td>Estado</td>
+                            <td>Observación</td>
+                            </tr>
+                        </tbody>
+                </table>
+            </blockquote>
+        </div>
+    </div>
+    <br><br>
+    <div class="card">
+        <center>
+            <div class="card-header">
+                Valide sus precios
+            </div>
+        </center>
         <div class="card-body">
             <blockquote class="blockquote mb-0">
                 <table class="table">
